@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-bold tracking-tight;
+  }
+
+  /* Urban Youthful typography overrides */
+  .font-drama {
+    @apply font-serif font-black uppercase tracking-tighter;
+  }
+
+  .font-data {
+    @apply font-mono;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    @apply pointer-events-none fixed inset-0 z-[9999] opacity-5 w-full h-full;
+  }
+
+  /* Magnetic Button Hover State classes to be used in JS */
+  .magnetic-btn {
+    @apply relative overflow-hidden transition-transform duration-300;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .magnetic-btn:hover {
+    transform: scale(1.03);
+  }
+}
